@@ -1,13 +1,16 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import coffee.Coffee;
+import factory.AmericanoFactory;
+import factory.CappuccinoFactory;
+import factory.CoffeeTypeFactory;
+import factory.LatteFactory;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
-    }
+public static void printCoffee(CoffeeTypeFactory factory, int milkAmount, int groundCoffeeAmount){
+    Coffee coffee = factory.createCoffe(groundCoffeeAmount, milkAmount);
+    coffee.prepare();
+}
+
+void main() {
+    printCoffee(new CappuccinoFactory(), 100, 18);
+    printCoffee(new AmericanoFactory(), 150, 0);
+    printCoffee(new LatteFactory(), 18, 250);
 }
