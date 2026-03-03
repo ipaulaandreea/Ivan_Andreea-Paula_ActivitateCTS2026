@@ -5,7 +5,7 @@ import factory.CoffeeTypeFactory;
 import factory.LatteFactory;
 
 public static void printCoffee(CoffeeTypeFactory factory, int milkAmount, int groundCoffeeAmount){
-    Coffee coffee = factory.createCoffe(groundCoffeeAmount, milkAmount);
+    Coffee coffee = factory.createCoffee(groundCoffeeAmount, milkAmount);
     coffee.prepare();
 }
 

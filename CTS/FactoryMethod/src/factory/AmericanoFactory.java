@@ -5,7 +5,7 @@ import coffee.Coffee;
 
 public class AmericanoFactory implements CoffeeTypeFactory {
     @Override
-    public Coffee createCoffe(int groundCoffeeAmount, int milkAmount) {
+    public Coffee createCoffee(int groundCoffeeAmount, int milkAmount) {
         return new Americano(milkAmount, groundCoffeeAmount);
     }
 }
