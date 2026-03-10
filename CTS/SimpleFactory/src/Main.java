@@ -1,13 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import factory.AppleProductFactory;
+import factory.AppleProductType;
+import products.AppleProduct;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
-    }
+void main() {
+    AppleProductFactory factory = AppleProductFactory.getInstance();
+    AppleProduct iPhone = factory.getAppleProduct(AppleProductType.IPhone, 17, 599);
+    AppleProduct MacBook = factory.getAppleProduct(AppleProductType.MacBook, 20, 1099);
+    AppleProduct iPad = factory.getAppleProduct(AppleProductType.IPad, 25, 699);
+
+    System.out.println(iPad.displaySpecs());
+    System.out.println(iPhone.displaySpecs());
+    System.out.println(MacBook.displaySpecs());
 }
+
