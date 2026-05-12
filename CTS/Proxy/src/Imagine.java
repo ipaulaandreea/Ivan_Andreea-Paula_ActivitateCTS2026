@@ -1,0 +1,5 @@
+interface Imagine {
+
+    void afiseaza();
+
+}
